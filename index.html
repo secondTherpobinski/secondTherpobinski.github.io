@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Duración del flujo</title>
+    <!-- box icons -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <!-- custom css -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <a href="#" class="logo" style="color: #660000;">ISTCRE</a>
+      <i class="bx bx-menu" id="menu-icon"></i>
+      <nav class="navbar">
+        <a href="#description" class="active">Descripción</a>
+        <a href="#formula">Formula</a>
+        <a href="#calculator">Calculador</a>
+      </nav>
+    </header>
+    <!-- description section design -->
+    <section class="description" id="description">
+      <div class="description-content">
+        <h3>Duración del flujo</h3>
+        <h1>Cilindros de Oxígeno</h1>
+        <h3><span>Cálculo de disponibilidad de oxígeno </span> en diferentes tanques.</h3>
+        <p style="text-align: justify;">
+          Oxigenoterapia es el uso terapéutico de oxígeno en concentraciones
+          mayores a la del aire ambiental (21%), para prevenir y tratar la
+          hipoxia, y asegurar las necesidades metabólicas del organismo. La
+          necesidad de oxigenoterapia se determina por la presencia de una
+          inadecuada presión parcial de oxígeno en sangre arterial, que se
+          correlaciona con baja saturación de oxígeno de la hemoglobina.
+        </p>
+        <div class="social-media">
+          <a href="https://www.cruzrojainstituto.edu.ec" target="_blank"><i class="bx bx-globe"></i></a>
+          <a href="https://www.facebook.com/Istcre" target="_blank"><i class="bx bxl-facebook"></i></a>
+          <a href="https://www.instagram.com/istcre" target="_blank"><i class="bx bxl-instagram-alt"></i></a>
+        </div>
+        <a href="#calculator" class="btn">Calcular</a>
+      </div>
+      <div class="description-img">
+        <img src="images/logo-vino.png" alt="" />
+      </div>
+    </section>
+    <!-- formula section design -->
+    <section class="formula" id="formula">
+      <div class="formula-img">
+        <img src="images/formula.png" alt="" />
+      </div>
+      <div class="formula-content">
+        <h2 class="heading">
+          <span>Fórmula:</span> Representación de factores que intervienen
+        </h2>
+        <ul>
+          <li>Duración de flujo en minutos</li>
+          <li>Medidor de presion en psi</li>
+          <li>Presión residual segura</li>
+          <li>Constante de Cilindro</li>
+          <li>Frecuencia de flujo en L/min</li>
+        </ul>
+        <br />
+        <div class="ecuacion">
+          <div class="fraccion">
+            <span class="fup">(Medidor de presion en psi - Presión residual segura) x Constante de Cilindro</span>
+            <span class="bar">/</span>
+            <span class="fdn">Frecuencia de flujo en L/min</span>
+          </div>
+          <b> = Duración de flujo en minutos</b>
+        </div>
+      </div>
+    </section>
+    <section class="calculator" id="calculator">
+      <h2 class="heading">Nuestro <span>Calculador</span></h2>
+      <div class="calculator-container">
+        <div class="calculator-box">
+          <h3>Ingresa los datos solicitados:</h3>
+        </div>
+      </div>
+    </br></br>
+      <div class="calculator-container">
+        <div class="calculator-main">
+          <i class='bx bx-calculator'></i>
+          <form id="myForm">
+            <input type="number" class="controls" name="mpsi" id="mpsi" min="1000" max="9999" placeholder="Ingresa el medidor de presión psi" required>
+            <select class="controls" name="kc" id="kc" required >
+              <option value="" disabled selected hidden>Seleciona la Constante del cilindro</option>
+              <option value="3.14">A: 3.14</option>
+              <option value="0.16">D: 0.16</option>
+              <option value="0.28">E: 0.28</option>
+              <option value="1.56">M: 1.56</option>
+              <option value="2.41">G: 2.41</option>
+              <option value="3.14">H: 3.14</option>
+              <option value="3.14">K: 3.14</option>
+            </select>
+            <input type="number" class="controls" name="ff" id="ff" min="1" max="15" placeholder="Ingresa la Frecuencia del flujo en L/min" required>
+            <button type="submit" class="botons">Calcular</button>
+          </form>
+        </div>
+        <div class="calculator-main">
+          <i class='bx bxs-analyse'></i>
+          <div class="resultado">
+            <b style="color: #660000;;">Dfm = </b>
+            <div class="fraccion">
+              <span class="fup" id="numerador" style="color: white;">(0 - 200) x 0</span>
+              <span class="bar">/</span>
+              <span class="fdn" id="denominador" style="color: white;">0</span>
+            </div>
+            <b style="color: #660000;;"> = </b>
+            <div class="fraccion">
+              <span class="fup" id="numeradorRes" style="color: white;">0</span>
+              <span class="bar">/</span>
+              <span class="fdn" id="denominadorRes" style="color: white;">0</span>
+            </div>
+            <p id="pResultado"><b style="color: #660000;"> Dfm = </b>0 min; o 0 h</p>
+            <button type="button" class="botons" onclick="limpiarValues()">Limpiar</button>
+          </div>
+        </div>
+      </div>
+      </div>
+    </section>
+    <footer class="footer">
+      <div class="footer-text">
+        <p>Copyright &copy; 2023 ISTCRE by therpobinski | All Rights Reserved.</p>
+      </div>
+      <div class="footer-iconTop">
+        <a href="#description"><i class='bx bx-up-arrow-alt' ></i></a>
+      </div>
+    </footer>
+    <script src="js/script.js"></script>
+  </body>
+</html>
